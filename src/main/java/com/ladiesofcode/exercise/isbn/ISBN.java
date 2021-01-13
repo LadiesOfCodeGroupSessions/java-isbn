@@ -50,4 +50,11 @@ public class ISBN {
      */
 
 
+    public boolean validateISBN(String s) {
+        if(s.length() == 13) {
+            return true;
+        }
+    }
+
+
 }
