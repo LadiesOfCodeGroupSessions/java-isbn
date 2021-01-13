@@ -51,11 +51,18 @@ public class ISBN {
 
 
     public boolean validateISBN(String s) {
-        int count = 0;
-        for (int i = 0; i<s.length(); i++) {
-            s.charAt(i);
+        StringBuilder isbnSb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ') {
+                isbnSb.append(s.charAt(i));
+            }
         }
-        if(s.length() == 13) {
+        String isbn = isbnSb.toString();
+        if (isbn.length() != 13) {
+            return false;
+        }
+        String regex = "\\d+";
+        if (s.matches(regex)) {
             return true;
         }
         return false;

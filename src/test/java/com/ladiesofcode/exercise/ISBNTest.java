@@ -30,10 +30,12 @@ public class ISBNTest {
     }
 
     @Test
-    public void testIfIsbnIsAllDigit(){
+    public void testIfIsbnContainsSpaces(){
         assertTrue(isbn.validateISBN("978 0 471 48648 0"));
     }
 
-
-
+    @Test
+    public void testIfIsbnIsAllDigit(){
+        assertFalse(isbn.validateISBN("978a471486480"));
+    }
 }
