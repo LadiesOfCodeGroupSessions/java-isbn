@@ -1,0 +1,13 @@
+package com.ladiesofcode;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class IsbnJavaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(IsbnJavaApplication.class, args);
+	}
+
+}
