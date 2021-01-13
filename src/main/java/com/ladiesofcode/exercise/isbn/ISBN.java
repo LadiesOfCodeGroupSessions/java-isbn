@@ -51,9 +51,14 @@ public class ISBN {
 
 
     public boolean validateISBN(String s) {
+        int count = 0;
+        for (int i = 0; i<s.length(); i++) {
+            s.charAt(i);
+        }
         if(s.length() == 13) {
             return true;
         }
+        return false;
     }
 
 

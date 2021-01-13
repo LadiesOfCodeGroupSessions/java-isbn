@@ -19,12 +19,21 @@ public class ISBNTest {
 
     @Test
     public void validISBN13() {
+
         assertTrue(isbn.validateISBN("9780470059029"));
     }
 
     @Test
     public void emptyISBN13() {
+
         assertFalse(isbn.validateISBN(""));
     }
+
+    @Test
+    public void testIfIsbnIsAllDigit(){
+        assertTrue(isbn.validateISBN("978 0 471 48648 0"));
+    }
+
+
 
 }
