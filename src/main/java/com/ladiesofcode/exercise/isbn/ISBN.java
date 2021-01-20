@@ -53,7 +53,7 @@ public class ISBN {
     public boolean validateISBN(String s) {
         StringBuilder isbnSb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != ' ') {
+            if (s.charAt(i) != ' ' && s.charAt(i) != '-') {
                 isbnSb.append(s.charAt(i));
             }
         }
@@ -62,7 +62,7 @@ public class ISBN {
             return false;
         }
         String regex = "\\d+";
-        if (s.matches(regex)) {
+        if (isbn.matches(regex)) {
             return true;
         }
         return false;
