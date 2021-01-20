@@ -28,33 +28,37 @@ public class ISBNTest {
     }
 
     @Test
-    public void testIfIsbnContainsSpaces(){
+    public void testIfIsbnContainsSpaces() {
         assertTrue(isbn.validateISBN("978 0 471 48648 0"));
     }
 
     @Test
-    public void testIfIsbnIsAllDigit(){
+    public void testIfIsbnIsAllDigit() {
         assertFalse(isbn.validateISBN("978a471486480"));
     }
 
     @Test
-    public void testIfIsbnContainsIphone(){
+    public void testIfIsbnContainsIphone() {
         assertTrue(isbn.validateISBN("978-0596809485"));
     }
 
     @Test
-    public void testIfIsbnContainsMoreThanOneIphone(){
+    public void testIfIsbnContainsMoreThanOneIphone() {
         assertTrue(isbn.validateISBN("978-0-13-149505-0"));
     }
 
     @Test
-    public void testIfIsbnContainsMoreThanOneIphone2(){
+    public void testIfIsbnContainsMoreThanOneIphone2() {
         assertTrue(isbn.validateISBN("978-0-262-13472-9"));
     }
 
     @Test
     public void testIfCheckedDigitIsCorrect() {
-        //"9780596809485"
-        assertTrue(5, isbn.checkDigit());
+        assertEquals(9, isbn.checkDigit("9780470059029"));
     }
+//
+//    @Test
+//    public void testValidateIfCheckedDigitIsCorrect() {
+//        assertTrue(isbn.validateISBN("9780470059029"));
+//    }
 }

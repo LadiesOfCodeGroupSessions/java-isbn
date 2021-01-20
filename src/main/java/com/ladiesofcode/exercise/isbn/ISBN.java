@@ -58,11 +58,16 @@ public class ISBN {
             }
         }
         String isbn = isbnSb.toString();
-        if (isbn.length() != 13) {
-            return false;
-        }
+        if (checkISBN13(isbn)) return false;
         String regex = "\\d+";
         if (isbn.matches(regex)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean checkISBN13(String isbn) {
+        if (isbn.length() != 13) {
             return true;
         }
         return false;
@@ -72,25 +77,18 @@ public class ISBN {
     public int checkDigit(String isbn) {
         //"9780596809485"
         int resultOfMultiplication = 0;
-        int resultOfModulo = 0;
 
         for (int i = 0; i < isbn.length() - 1; i++) {
             //convert string to int
             int number = Integer.parseInt(String.valueOf(isbn.charAt(i)));
 
-            if (i == 0 || i % 2 != 0) {
+            if (i == 0 || i % 2 == 0) {
                 resultOfMultiplication += number;
             } else {
-                resultOfMultiplication = number * 3;
+                resultOfMultiplication += number * 3;
             }
         }
 
-
-    }
-
-
-
-        }
-        return 0;
+        return 10 - (resultOfMultiplication % 10);
     }
 }
