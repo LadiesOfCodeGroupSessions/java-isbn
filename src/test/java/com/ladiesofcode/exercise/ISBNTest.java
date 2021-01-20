@@ -54,11 +54,16 @@ public class ISBNTest {
 
     @Test
     public void testIfCheckedDigitIsCorrect() {
-        assertEquals(9, isbn.checkDigit("9780470059029"));
+        assertEquals(9, isbn.checkDigit13("9780470059029"));
     }
-//
-//    @Test
-//    public void testValidateIfCheckedDigitIsCorrect() {
-//        assertTrue(isbn.validateISBN("9780470059029"));
-//    }
+
+    @Test
+    public void testIfIsbnIsInvalid() {
+        assertFalse(isbn.validateISBN("9780470059027"));
+    }
+
+    @Test
+    public void testIfCheckedDigitIsCorrectIsbn10() {
+        assertEquals(7, isbn.checkDigit10("0471958697"));
+    }
 }

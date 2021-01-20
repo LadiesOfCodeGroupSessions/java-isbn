@@ -64,7 +64,7 @@ public class ISBN {
 
             return false;
         }
-        return checkDigit(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)));
+        return checkDigit13(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)));
     }
 
     public boolean checkIfISBNIsAllDigit(String isbn) {
@@ -84,7 +84,7 @@ public class ISBN {
     }
 
 
-    public int checkDigit(String isbn) {
+    public int checkDigit13(String isbn) {
         //"9780596809485"
         int resultOfMultiplication = 0;
 
