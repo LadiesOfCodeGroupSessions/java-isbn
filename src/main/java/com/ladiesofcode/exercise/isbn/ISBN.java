@@ -59,10 +59,20 @@ public class ISBN {
         }
         String isbn = isbnSb.toString();
         if (checkISBN13(isbn)) return false;
+
+        if (!checkIfISBNIsAllDigit(isbn)) {
+
+            return false;
+        }
+        return checkDigit(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)));
+    }
+
+    public boolean checkIfISBNIsAllDigit(String isbn) {
         String regex = "\\d+";
         if (isbn.matches(regex)) {
             return true;
         }
+
         return false;
     }
 
@@ -91,4 +101,6 @@ public class ISBN {
 
         return 10 - (resultOfMultiplication % 10);
     }
+
+
 }

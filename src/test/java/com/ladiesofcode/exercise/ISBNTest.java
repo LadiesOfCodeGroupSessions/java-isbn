@@ -29,7 +29,7 @@ public class ISBNTest {
 
     @Test
     public void testIfIsbnContainsSpaces() {
-        assertTrue(isbn.validateISBN("978 0 471 48648 0"));
+        assertTrue(isbn.validateISBN("97804 70059 029"));
     }
 
     @Test
@@ -44,7 +44,7 @@ public class ISBNTest {
 
     @Test
     public void testIfIsbnContainsMoreThanOneIphone() {
-        assertTrue(isbn.validateISBN("978-0-13-149505-0"));
+        assertTrue(isbn.validateISBN("9-7804-7005-9029"));
     }
 
     @Test
