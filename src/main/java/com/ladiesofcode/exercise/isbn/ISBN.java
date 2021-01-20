@@ -71,10 +71,26 @@ public class ISBN {
 
     public int checkDigit(String isbn) {
         //"9780596809485"
+        int resultOfMultiplication = 0;
+        int resultOfModulo = 0;
 
-        for (int i = 0; i< isbn.length() - 1; i++) {
+        for (int i = 0; i < isbn.length() - 1; i++) {
             //convert string to int
-            int number = Integer.parseInt(i);
+            int number = Integer.parseInt(String.valueOf(isbn.charAt(i)));
+
+            if (i == 0 || i % 2 != 0) {
+                resultOfMultiplication += number;
+            } else
+                (i % 2 == 0) {
+                resultOfMultiplication = number * 3;
+            }
+        }
+
+
+    }
+
+
+
         }
         return 0;
     }
