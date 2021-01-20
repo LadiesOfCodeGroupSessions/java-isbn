@@ -80,8 +80,7 @@ public class ISBN {
 
             if (i == 0 || i % 2 != 0) {
                 resultOfMultiplication += number;
-            } else
-                (i % 2 == 0) {
+            } else {
                 resultOfMultiplication = number * 3;
             }
         }
