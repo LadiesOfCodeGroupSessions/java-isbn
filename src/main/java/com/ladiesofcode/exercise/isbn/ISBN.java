@@ -69,4 +69,13 @@ public class ISBN {
     }
 
 
+    public int checkDigit(String isbn) {
+        //"9780596809485"
+
+        for (int i = 0; i< isbn.length() - 1; i++) {
+            //convert string to int
+            int number = Integer.parseInt(i);
+        }
+        return 0;
+    }
 }

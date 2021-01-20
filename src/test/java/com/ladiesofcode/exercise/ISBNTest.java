@@ -4,8 +4,7 @@ import com.ladiesofcode.exercise.isbn.ISBN;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ISBNTest {
 
@@ -51,5 +50,11 @@ public class ISBNTest {
     @Test
     public void testIfIsbnContainsMoreThanOneIphone2(){
         assertTrue(isbn.validateISBN("978-0-262-13472-9"));
+    }
+
+    @Test
+    public void testIfCheckedDigitIsCorrect() {
+        //"9780596809485"
+        assertTrue(5, isbn.checkDigit());
     }
 }
