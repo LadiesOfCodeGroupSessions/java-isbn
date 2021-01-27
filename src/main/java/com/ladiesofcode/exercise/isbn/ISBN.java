@@ -60,11 +60,14 @@ public class ISBN {
         String isbn = isbnSb.toString();
         if (checkISBN13(isbn)) return false;
 
+
         if (!checkIfISBNIsAllDigit(isbn)) {
 
             return false;
         }
-        return checkDigit13(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)));
+
+        return (checkDigit13(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)))) ||
+                (checkDigit10(isbn) == Integer.parseInt(String.valueOf(isbnSb.charAt(isb)));
     }
 
     public boolean checkIfISBNIsAllDigit(String isbn) {
@@ -103,4 +106,14 @@ public class ISBN {
     }
 
 
+    public int checkDigit10(String isbn) {
+       int multiplier = 1;
+       int sum = 0;
+       for (int i = 0; i < isbn.length() - 1; i++) {
+           int number = Integer.parseInt(String.valueOf(isbn.charAt(i)));
+           sum += number*multiplier;
+           multiplier++;
+       }
+       return sum % 11;
+    }
 }

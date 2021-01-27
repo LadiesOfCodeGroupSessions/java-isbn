@@ -66,4 +66,9 @@ public class ISBNTest {
     public void testIfCheckedDigitIsCorrectIsbn10() {
         assertEquals(7, isbn.checkDigit10("0471958697"));
     }
+
+    @Test
+    public void testIfIsbn13And10IsValid() {
+        assertTrue(isbn.validateISBN("0471958697"));
+    }
 }
