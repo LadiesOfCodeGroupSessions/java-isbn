@@ -52,13 +52,16 @@ public class ISBN {
 
     public boolean validateISBN(String s) {
         StringBuilder isbnSb = new StringBuilder();
+
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) != ' ' && s.charAt(i) != '-') {
                 isbnSb.append(s.charAt(i));
             }
         }
         String isbn = isbnSb.toString();
-        if (checkISBN13(isbn)) return false;
+        Integer
+
+        if (!checkISBN13(isbn)) return false;
 
 
         if (!checkIfISBNIsAllDigit(isbn)) {
@@ -67,7 +70,7 @@ public class ISBN {
         }
 
         return (checkDigit13(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)))) ||
-                (checkDigit10(isbn) == Integer.parseInt(String.valueOf(isbnSb.charAt(isb)));
+                (checkDigit10(isbn) == Integer.parseInt(String.valueOf(isbnSb.charAt(isbn.length()-1))));
     }
 
     public boolean checkIfISBNIsAllDigit(String isbn) {
@@ -80,10 +83,10 @@ public class ISBN {
     }
 
     private boolean checkISBN13(String isbn) {
-        if (isbn.length() != 13) {
-            return true;
+        if (isbn.length() != 13 && isbn.length() != 10) {
+            return false;
         }
-        return false;
+        return true;
     }
 
 
