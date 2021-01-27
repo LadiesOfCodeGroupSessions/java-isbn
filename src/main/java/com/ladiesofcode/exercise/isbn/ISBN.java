@@ -59,7 +59,10 @@ public class ISBN {
             }
         }
         String isbn = isbnSb.toString();
-        Integer
+
+        if(isbn.isEmpty()) return false;
+
+        Integer isbnLength = Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)));
 
         if (!checkISBN13(isbn)) return false;
 
@@ -69,8 +72,8 @@ public class ISBN {
             return false;
         }
 
-        return (checkDigit13(isbn) == Integer.parseInt(String.valueOf(isbn.charAt(isbn.length()-1)))) ||
-                (checkDigit10(isbn) == Integer.parseInt(String.valueOf(isbnSb.charAt(isbn.length()-1))));
+        return (checkDigit13(isbn) == isbnLength) ||
+                (checkDigit10(isbn) == isbnLength);
     }
 
     public boolean checkIfISBNIsAllDigit(String isbn) {
